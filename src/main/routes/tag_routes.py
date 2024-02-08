@@ -10,6 +10,7 @@ tags_routes_bp = Blueprint('tags_routes', __name__)
 def create_tags():
     response = None
     try:
+      tag_creator_validator(request)
       tag_creator_view = TagCreatorView()
 
       http_request = HttpRequest(body=request.json)
